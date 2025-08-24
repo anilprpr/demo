@@ -11,6 +11,7 @@ public class WelcomeController {
 		@PostMapping("/hello")
 		public String hello(@RequestParam  String name)
 		{
+			System.out.println("Hi:"+name);
 			return name;
 			
 		}
