@@ -15,6 +15,15 @@ public class WelcomeController {
 			return name;
 			
 		}
+		@PostMapping("/login")
+		public String login(@RequestParam  String name)
+		{
+			System.out.println("Hi:"+name);
+			if("Anil".equalsIgnoreCase(name))
+			return "Login Successfull....";
+			else
+			return "Login Failed....";	
 			
+		}	
 
 }
