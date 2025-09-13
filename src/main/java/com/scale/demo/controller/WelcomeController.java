@@ -1,5 +1,6 @@
 package com.scale.demo.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class WelcomeController {
 	
 	
-		@PostMapping("/hello")
+		@GetMapping("/hello")
 		public String hello(@RequestParam  String name)
 		{
 			System.out.println("Hi:"+name);
