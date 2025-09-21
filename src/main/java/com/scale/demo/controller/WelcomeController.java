@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 public class WelcomeController {
  
 		
-		
+		@Autowired
 		private DemoService demoService;
 	
 		@GetMapping("/hello")
