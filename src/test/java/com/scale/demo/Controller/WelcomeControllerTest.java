@@ -39,12 +39,12 @@ class WelcomeControllerTest {
     @Test
     void testHelloEndpoint()  {
     	// Arrange: mock the service response
-        when(demoService.findByName("Anil")).thenReturn("Hello Anil");
-        when(dao.findByName("Anil")).thenReturn("Hello Anil");
+        when(demoService.findByName("Anil")).thenReturn("Anil");
+        when(dao.findByName("Anil")).thenReturn("Anil");
               
         String response=controller.hello("Anil");
         // Assert: verify the response
-        assertThat(response).isEqualTo("Hello Anil");
+        assertThat(response).isEqualTo("Anil");
     }
 	
 	
