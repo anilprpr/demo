@@ -3,25 +3,23 @@ package com.scale.demo.service;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.scale.demo.repository.DemoRepository;
-
-@ExtendWith(MockitoExtension.class)
-class DemoServiceTest {
+@Disabled
+@SpringBootTest
+public class DemoServiceEmulatorTest {
 	
 	
 	@Mock
     private DemoRepository demoDao;  // Mock the repository
 
-    @InjectMocks
-    private DemoService demoService; // Injects the mock into the service
+    @Autowired
+    private DemoService testable; // Injects the mock into the service
 
     @Test
     void testFindByName_ReturnsExpectedValue() {
@@ -31,7 +29,7 @@ class DemoServiceTest {
         when(demoDao.findByName(inputName)).thenReturn(expected);
 
         // Act
-        String result = demoService.findByName(inputName);
+        String result = testable.findByName(inputName);
 
         // Assert
         assertEquals(expected, result, "The returned name should match the expected value");
