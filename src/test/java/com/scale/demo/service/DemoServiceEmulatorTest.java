@@ -5,6 +5,7 @@ import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,7 +19,7 @@ public class DemoServiceEmulatorTest {
 	@Mock
     private DemoRepository demoDao;  // Mock the repository
 
-    @Autowired
+    @InjectMocks
     private DemoService testable; // Injects the mock into the service
 
     @Test

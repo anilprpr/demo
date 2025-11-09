@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,7 +16,7 @@ import com.scale.demo.service.DemoService;
 @SpringBootTest
 public class WelcomeControllerEmulatorTest {
 	
-	@Autowired
+	@InjectMocks
 	 WelcomeController controller;
 	
 		
