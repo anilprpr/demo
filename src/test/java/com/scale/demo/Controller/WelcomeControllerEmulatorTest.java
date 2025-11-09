@@ -14,14 +14,14 @@ import com.scale.demo.repository.DemoRepository;
 import com.scale.demo.service.DemoService;
 
 @SpringBootTest
-public class WelcomeControllerEmulatorTest {
+class WelcomeControllerEmulatorTest {
 	
 	@InjectMocks
 	 WelcomeController controller;
 	
 		
 	 @Mock
-	 private DemoService demoService;
+	 DemoService demoService;
 	 @Mock
 	 DemoRepository dao;
 	 
@@ -43,7 +43,7 @@ public class WelcomeControllerEmulatorTest {
 	    	// Arrange: mock the service response
 	        when(demoService.findByName("Anil")).thenReturn("Anil");
 	        when(dao.findByName("Anil")).thenReturn("Anil");
-	              
+	         //Act
 	        String response=controller.hello("Anil");
 	        // Assert: verify the response
 	        assertThat(response).isEqualTo("Anil");

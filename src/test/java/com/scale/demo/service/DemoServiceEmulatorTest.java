@@ -13,7 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.scale.demo.repository.DemoRepository;
 @Disabled
 @SpringBootTest
-public class DemoServiceEmulatorTest {
+class DemoServiceEmulatorTest {
 	
 	
 	@Mock
