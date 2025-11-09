@@ -23,14 +23,10 @@ public class ThreadConfig {
         executor.initialize();
         return executor;
     }
-	
-	/*@Bean(name = "virtualExecutor")
-    public Executor virtualExecutor() {
-        return Executor.newVirtualThreadPerTaskExecutor();//  newVirtualThreadPerTaskExecutor();
-    }   
-	@Bean
-    public ExecutorService virtualThreadExecutor() {
-        return Executor.newVirtualThreadPerTaskExecutor();
-    }*/
+
+    @Bean(name = "virtualExecutor", destroyMethod = "shutdown")
+    public ExecutorService virtualExecutor() {
+        return Executors.newVirtualThreadPerTaskExecutor();
+    }
 
 }
