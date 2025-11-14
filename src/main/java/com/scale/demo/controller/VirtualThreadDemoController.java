@@ -18,11 +18,11 @@ public class VirtualThreadDemoController {
 	
 	
 	
-		private static final Logger logger = LoggerFactory.getLogger(VirtualThreadDemoController.class);
+
 		@Async("traditionalExecutor")
 	    @GetMapping("/traditional")
 	    public CompletableFuture<String> traditionalThread() {
-	        logger.info("Starting traditional thread request. Thread: {}", 
+	        log.info("Starting traditional thread request. Thread: {}",
 	                   Thread.currentThread().getName());
 	        try {
 	            TimeUnit.SECONDS.sleep(1);
@@ -37,7 +37,7 @@ public class VirtualThreadDemoController {
 	    @Async("virtualExecutor")
 	    @GetMapping("/virtual")
 	    public CompletableFuture<String> virtualThread() {
-	        logger.info("Starting virtual thread request. Thread: {}", 
+	        log.info("Starting virtual thread request. Thread: {}",
 	                   Thread.currentThread());
 	        try {
 	            TimeUnit.SECONDS.sleep(1);
