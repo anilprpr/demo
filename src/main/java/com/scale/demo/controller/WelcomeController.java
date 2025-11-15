@@ -50,9 +50,6 @@ public class WelcomeController {
 			
 			
 		}
-		public String getName()
-        {
-            return "WelcomeController";
-        }
+		
 
 }
