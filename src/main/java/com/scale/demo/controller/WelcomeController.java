@@ -45,7 +45,7 @@ public class WelcomeController {
 		public Optional<Fruits>  getFruits(@PathVariable  int price)
 		{
 			
-			 //Optional<Fruits> =
+
 			 return demoService.findByPrice(price);
 			
 			
