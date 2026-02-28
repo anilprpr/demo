@@ -1,22 +1,20 @@
 package com.scale.demo.controller;
 
 import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
 import com.scale.demo.entity.Fruits;
 import com.scale.demo.service.DemoService;
-
 import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @RequestMapping("/demo")
-public class WelcomeController {
+@RequiredArgsConstructor
+class WelcomeController {
  
 		
-		@Autowired
-		private DemoService demoService;
+
+		private final DemoService demoService;
 		
 	
 		@GetMapping("/hello")
