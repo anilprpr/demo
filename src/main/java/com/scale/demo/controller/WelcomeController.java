@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("/demo")
 @RequiredArgsConstructor
-class WelcomeController {
+public class WelcomeController {
  
 		
 
