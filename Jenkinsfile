@@ -48,7 +48,7 @@ pipeline{
 
   script{
 
-  #withCredentials([ usernamePassword(credentialsId: DOCKERHUB_CREDENTIALS, passwordVariable: 'doc_pwd', usernameVariable: 'doc_user') ])
+
 
             bat 'docker push anilprpr/jenkins-demo'
 
