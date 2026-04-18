@@ -12,15 +12,14 @@ public class RedisService {
 
     private final RedisConfig redis;
 
-    public String getMykeyJsonPayload(String key)
-    {
-        log.info("My Redis Key:{}",key);
+    public String getMykeyJsonPayload(String key) {
+        log.info("My Redis Key:{}", key);
         return redis.getValue(key);
 
     }
-    public void setMykeyValue(String key, String value)
-    {
-        log.info("My Redis SET Key:{}:{}",key,value);
+
+    public void setMykeyValue(String key, String value) {
+        log.info("My Redis SET Key:{}:{}", key, value);
         redis.setValue(key, value);
 
     }
