@@ -1,7 +1,10 @@
 package com.scale.demo.controller;
 
 import java.util.Optional;
+
+import com.scale.demo.service.RedisService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.scale.demo.entity.Fruits;
 import com.scale.demo.service.DemoService;
@@ -15,7 +18,7 @@ public class WelcomeController {
 		
 
 		private final DemoService demoService;
-		
+		private final RedisService redisService;
 	
 		@GetMapping("/hello")
 		public String hello(@RequestParam  String name)
@@ -46,6 +49,20 @@ public class WelcomeController {
 			
 			
 		}
+        @PostMapping(value="/redis/setkey")
+        public void setRedis(@RequestParam  String key, @RequestParam String value)
+        {
+            log.info("SET:KEY:{}:VALUE:{}",key,value);
+            redisService.setMykeyValue(key,value);
+
+        }
+        @GetMapping(value="/redis/{key}")
+        public String getRedis(@PathVariable  String key)
+        {
+            log.info("GET KEY:{}",key);
+            return redisService.getMykeyJsonPayload(key);
+
+        }
 		
 
 }
