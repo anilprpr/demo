@@ -12,8 +12,8 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 @Configuration
 @EnableAsync
 public class ThreadConfig {
-	
-	@Bean(name = "traditionalExecutor")
+
+    @Bean(name = "traditionalExecutor")
     public Executor traditionalExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         executor.setCorePoolSize(10);  // Limited number of threads

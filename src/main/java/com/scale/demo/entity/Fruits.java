@@ -10,10 +10,9 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Fruits {
-	
-	
-	private List<String> fruits;
-	
-	
+
+
+    private List<String> fruits;
+
 
 }
