@@ -1,5 +1,7 @@
 package com.scale.demo.config;
 
+import javax.sound.sampled.Port;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,6 +17,7 @@ public class DemoConfig {
     @Bean
     public RedisConfig  getRedis()
     {
+        System.out.println("REDIS IP:PORT"+ip+":"+port);
         return  RedisConfig.getInstance(ip,port);
 
     }
